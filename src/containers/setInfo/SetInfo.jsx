@@ -1,12 +1,13 @@
 import { useState } from 'react'
+import { useLocation } from 'wouter'
 import { DatePicker, TimePicker } from '@material-ui/pickers'
-import { alpha } from '@material-ui/core/styles'
 
 import './setInfo.css'
 
 const SetInfo = () => {
 	const [date, setDate] = useState(new Date())
 	const [eventName, setEventName] = useState('')
+	const [location, setLocation] = useLocation()
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -18,7 +19,7 @@ const SetInfo = () => {
 		} else if (date.getTime() <= actualDate) {
 			alert('El evento debe ser en el futuro')
 		} else {
-			alert('Evento')
+			setLocation(`/clock?date=${date.getTime()}&name=${eventName}`)
 		}
 	}
 

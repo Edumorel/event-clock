@@ -25,6 +25,9 @@ const rules = [rulesJS, rulesCSS]
 
 module.exports = {
 	entry: './src/main.jsx',
+	output: {
+		publicPath: '/',
+	},
 	module: {
 		rules,
 	},
@@ -35,5 +38,6 @@ module.exports = {
 	],
 	devServer: {
 		port: 3000,
+		historyApiFallback: true,
 	},
 }

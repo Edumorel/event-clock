@@ -1,0 +1,14 @@
+.timer_content {
+	text-align: center;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.timer_content_name {
+	color: #fff;
+	padding: 0 0 60px 0;
+	font-size: 40px;
+	font-weight: 600;
+}
